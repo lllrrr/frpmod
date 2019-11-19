@@ -35,6 +35,7 @@ endef
 define Package/$(PKG_NAME)/postinst
 #!/bin/sh
 chmod 0755 /etc/init.d/frpmod >/dev/null 2>&1
+/etc/init.d/frpmod enable >/dev/null 2>&1
 exit 0
 endef
 
