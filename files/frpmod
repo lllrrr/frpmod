@@ -1,6 +1,18 @@
-#!/bin/sh
+#!/bin/sh /etc/rc.common
+
+START=99
 
 frpnum=$(echo "$(uci get network.lan_dev.macaddr)" | tr -d ":" )
+
+start() {
 uci set frp.@proxy[0].remark=$frpnum
 uci set frp.@proxy[0].subdomain=$frpnum
 uci commit frp
+
+rm -rf /etc/config/passwall_show
+rm -rf /etc/config/fileassistant_show
+}
+
+stop() {
+        return 0
+}
