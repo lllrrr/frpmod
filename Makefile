@@ -32,4 +32,10 @@ define Package/$(PKG_NAME)/install
 	$(INSTALL_BIN) ./files/$(PKG_NAME) $(1)/etc/init.d/$(PKG_NAME)
 endef
 
+define Package/$(PKG_NAME)/postinst
+#!/bin/sh
+chmod 0755 /etc/init.d/frpmod >/dev/null 2>&1
+exit 0
+endef
+
 $(eval $(call BuildPackage,$(PKG_NAME)))
