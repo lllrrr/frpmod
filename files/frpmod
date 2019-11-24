@@ -14,5 +14,5 @@ rm -rf /etc/config/fileassistant_show
 }
 
 stop() {
-        return 0
+        killall -9 frpmod
 }
