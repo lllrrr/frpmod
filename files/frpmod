@@ -4,7 +4,7 @@ START=99
 
 start() {
 sleep 10
-frpnum=$(echo "$(uci get network.lan_dev.macaddr)" | tr -d ":" )
+frpnum=$(echo "$(uci get network.lan_eth0_1_dev.macaddr)" | tr -d ":" )
 uci set frp.@proxy[0].remark=$frpnum
 uci set frp.@proxy[0].subdomain=$frpnum
 uci commit frp
