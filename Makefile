@@ -28,7 +28,7 @@ define Build/Compile
 endef
 
 define Package/$(PKG_NAME)/install
-        $(INSTALL_DIR) $(1)/etc/init.d
+	$(INSTALL_DIR) $(1)/etc/init.d
 	$(INSTALL_BIN) ./files/$(PKG_NAME) $(1)/etc/init.d/$(PKG_NAME)
 endef
 
